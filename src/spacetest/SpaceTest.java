@@ -45,7 +45,7 @@ public class SpaceTest implements S2DInterface {
         viper = engine.newGraphicFromTemplate("viper");
         viper.setLayer(foregroundLayer);
        
-        viper.repeatAnimation("flySmall");
+        viper.repeatAnimation("fly");
         viper.X(300).Y(250).setScale(2);
     }
 
