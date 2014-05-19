@@ -33,7 +33,7 @@ public class SpaceTest implements S2DInterface {
     @Override
     public void init(S2DEngine engine) {
         engine.loadTexture("SpaceBG.png", "SpaceBG");
-        engine.batchLoad("viper.txt");
+        engine.batchLoad("files.txt");
         
         backgroundLayer = engine.newS2DGameLayer(1, SortMode.DEPTH_SORTED);
         foregroundLayer = engine.newS2DGameLayer(2, SortMode.DEPTH_SORTED);
@@ -53,15 +53,9 @@ public class SpaceTest implements S2DInterface {
         viper.addAnimationFrame("fly", "viperFly1", 0.1f);
         viper.addAnimationFrame("fly", "viperFly4", 0.1f);
         viper.addAnimationFrame("fly", "viperFly3", 0.1f);
-        
        
         viper.repeatAnimation("fly");
-        
         viper.X(300).Y(250).setScale(2);
-        
-        engine.updateCamera(0, 0);
-        engine.setGameSpace(1);
-        engine.setBGColor(0, 0, 0);
     }
 
     @Override
@@ -81,9 +75,9 @@ public class SpaceTest implements S2DInterface {
         if(viperX > 590) viperAccel = -0.1f;
         if(viperX < 590) viperAccel = 0.1f;
         
-        viper.rotate(-viperVelocity * 2.5f);
+        //viper.rotate(-viperVelocity * 2.5f);
         viperX += viperVelocity;
-        viper.X(viperX);
+        //viper.X(viperX);
     }
     
 }
